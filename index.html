@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BuildRush – Building Materials in 60 Minutes</title>
+<style>
+:root{--bg:#fffaf3;--surf:#fff;--ink:#1d1a16;--mute:#6f675c;--line:#eadfce;--brand:#ff6a13;--brand2:#ffb703;--ok:#12934f;--dark:#1d1a16;--shadow:0 8px 28px rgba(60,40,10,.10);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15120e;--surf:#201b15;--ink:#f6efe4;--mute:#a79c8b;--line:#362e24;--dark:#0d0b08;--shadow:0 8px 28px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15120e;--surf:#201b15;--ink:#f6efe4;--mute:#a79c8b;--line:#362e24;--dark:#0d0b08;--shadow:0 8px 28px rgba(0,0,0,.4);color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Poppins","Segoe UI",system-ui,sans-serif;line-height:1.5}
+a{color:inherit}button{font:inherit;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:0;z-index:20;background:var(--surf);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surf);z-index:30}
+.hd{display:flex;align-items:center;gap:14px;padding:12px 0}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.5px;display:flex;align-items:center;gap:6px;text-decoration:none}
+.logo i{background:var(--brand);color:#fff;border-radius:9px;padding:0 7px;font-style:normal}
+.loc{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:6px 12px;font-size:12px;color:var(--mute);line-height:1.2;color:var(--ink);cursor:pointer}
+.loc b{display:block;color:var(--ok);font-size:13px}
+.search{flex:1;position:relative}
+.search input{width:100%;padding:12px 16px 12px 42px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;outline:none;transition:.2s}
+.search input:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(255,106,19,.15)}
+.search span{position:absolute;left:14px;top:50%;transform:translateY(-50%)}
+.ib{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:10px 14px;font-weight:600;position:relative}
+.cartb{background:var(--brand);color:#fff;border:0}
+.cartb em{font-style:normal;background:#fff;color:var(--brand);border-radius:99px;padding:0 7px;margin-left:6px;font-size:12px}
+.pop{animation:pop .35s}@keyframes pop{50%{transform:scale(1.15)}}
+body{overflow-x:clip}.hero{margin:0 calc(50% - 50vw);border-radius:0;padding:56px max(18px,calc(50vw - 562px));min-height:calc(100vh - 64px);position:relative;overflow:hidden;color:#fff;background:linear-gradient(120deg,#1d1a16 0%,#3a2310 55%,#ff6a13 140%);display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:center}
+.hero h1{font-size:clamp(34px,6vw,78px);line-height:1.05;margin:10px 0;letter-spacing:-1.5px}
+.hero h1 u{text-decoration:none;color:var(--brand2)}
+.hero p{color:#e8d9c4;max-width:460px}
+.chip{display:inline-block;background:rgba(255,255,255,.14);padding:5px 12px;border-radius:99px;font-size:12px;font-weight:600}
+.cta{margin-top:14px;display:inline-block;background:var(--brand2);color:#1d1a16;font-weight:700;border:0;padding:14px 26px;border-radius:14px;text-decoration:none;transition:.2s}
+.cta:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(255,183,3,.4)}
+.rider{position:relative;height:380px}
+.rider svg{position:absolute;width:100%;height:100%}
+.clock{position:absolute;right:6%;top:4%;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.1);border:2px dashed rgba(255,255,255,.4);display:grid;place-items:center;text-align:center;animation:spin 0s}
+.clock b{font-size:60px;line-height:1;display:block;color:var(--brand2)}.clock small{font-size:12px;letter-spacing:2px}
+.truck{position:absolute;bottom:6px;font-size:88px;animation:drive 6s linear infinite}
+@keyframes drive{0%{left:-20%}100%{left:100%}}
+.road{position:absolute;bottom:0;left:0;right:0;border-top:3px dashed rgba(255,255,255,.35)}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}
+.trust div{background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:14px;display:flex;gap:10px;align-items:center;font-size:13px;color:var(--mute)}
+.trust b{display:block;color:var(--ink);font-size:14px}.trust span{font-size:26px}
+h2{font-size:26px;letter-spacing:-.6px;margin:36px 0 4px}.sub{color:var(--mute);margin:0 0 16px}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.cat{background:var(--surf);border:1.5px solid var(--line);border-radius:20px;padding:16px 8px;text-align:center;transition:.25s;color:var(--ink)}
+.cat:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:var(--shadow);border-color:var(--brand)}
+.cat.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+.cat .e{font-size:38px;display:block;transition:.25s}.cat:hover .e{transform:scale(1.25)}
+.cat span:last-child{font-size:12.5px;font-weight:600;display:block;margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:22px;padding:12px;display:flex;flex-direction:column;transition:.25s;position:relative;animation:in .4s both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.img{height:130px;border-radius:16px;display:grid;place-items:center;font-size:62px;position:relative;overflow:hidden}
+.card:hover .img span{transform:scale(1.15) rotate(5deg)}.img span{transition:.3s}
+.save{position:absolute;top:8px;left:8px;background:var(--ok);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px}
+.min{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.65);color:#fff;font-size:10.5px;padding:2px 8px;border-radius:8px}
+.nm{font-weight:600;font-size:14px;margin:10px 4px 2px;min-height:42px}
+.tag{font-size:11.5px;color:var(--mute);margin:0 4px}
+.pr{margin:8px 4px;display:flex;align-items:baseline;gap:8px}.pr b{font-size:19px}.pr s{color:var(--mute);font-size:13px}
+.bulk{margin:0 4px 8px;font-size:12px;color:var(--ok);background:rgba(18,147,79,.1);border-radius:8px;padding:3px 8px;cursor:pointer;border:0;text-align:left}
+.bulk+.tip{display:none;margin:-4px 4px 8px;font-size:12px;background:var(--bg);border:1px dashed var(--line);border-radius:10px;padding:8px}
+.bulk.o+.tip{display:block}
+.add{margin-top:auto;border:1.5px solid var(--brand);background:transparent;color:var(--brand);font-weight:700;border-radius:12px;padding:9px;transition:.2s}
+.add:hover{background:var(--brand);color:#fff}
+.qty{margin-top:auto;display:flex;align-items:center;justify-content:space-between;background:var(--brand);color:#fff;border-radius:12px;padding:3px}
+.qty button{background:rgba(255,255,255,.2);color:#fff;border:0;border-radius:9px;width:34px;height:34px;font-size:18px;font-weight:700}
+.empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--mute)}
+.banners{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.bn{border-radius:24px;padding:26px;color:#fff;min-height:150px;position:relative;overflow:hidden;transition:.3s}
+.bn:hover{transform:scale(1.03)}.bn b{font-size:22px;display:block;max-width:60%;line-height:1.15}.bn small{opacity:.85}.bn i{position:absolute;right:10px;bottom:-6px;font-size:80px;font-style:normal;opacity:.9}
+.calc{background:var(--surf);border:1px solid var(--line);border-radius:26px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:20px}
+.calc label{font-size:13px;color:var(--mute);display:block;margin:12px 0 4px}
+.calc input[type=range]{width:100%;accent-color:var(--brand)}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+.res div{background:var(--bg);border-radius:18px;padding:16px;text-align:center}.res b{font-size:30px;color:var(--brand);display:block}
+.res small{color:var(--mute)}
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rv{background:var(--surf);border:1px solid var(--line);border-radius:22px;padding:20px}.rv p{margin:8px 0;font-size:14px}.rv small{color:var(--mute)}
+footer{background:var(--dark);color:#cfc3b0;margin-top:50px;padding:36px 0 24px;font-size:13px}
+footer .f{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px}footer h4{color:#fff;margin:0 0 8px}footer a{display:block;color:#cfc3b0;text-decoration:none;margin:4px 0}footer a:hover{color:var(--brand2)}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--surf);z-index:50;transform:translateX(105%);transition:.35s;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.25);padding-top:env(safe-area-inset-top,0px)}
+.drawer.o{transform:none}.ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:40;opacity:0;pointer-events:none;transition:.3s}.ov.o{opacity:1;pointer-events:auto}
+.dh{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);font-weight:700;font-size:18px}
+.db{flex:1;overflow:auto;padding:14px 18px}
+.bar{height:8px;background:var(--line);border-radius:9px;overflow:hidden;margin:6px 0 14px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--brand2));transition:.4s}
+.ci{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px}.ci .e{font-size:30px}.ci div{flex:1}
+.mini{display:flex;align-items:center;gap:8px}.mini button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;width:28px;height:28px}
+.df{padding:16px 18px;border-top:1px solid var(--line)}.df p{display:flex;justify-content:space-between;margin:3px 0}
+.go{width:100%;margin-top:10px;background:var(--brand);color:#fff;border:0;padding:14px;border-radius:14px;font-weight:700;font-size:15px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,120px);background:var(--dark);color:#fff;padding:12px 20px;border-radius:14px;z-index:60;transition:.35s;font-size:14px}.toast.o{transform:translate(-50%,0)}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding:28px}.trust{grid-template-columns:1fr 1fr}.banners,.rev,.calc{grid-template-columns:1fr}footer .f{grid-template-columns:1fr 1fr}.loc{display:none}.hd{flex-wrap:wrap}.search{order:5;flex-basis:100%}.rider{height:150px}.clock{width:110px;height:110px}.clock b{font-size:32px}}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+ <a class="logo" href="#top"><i>B</i>BuildRush</a>
+ <div class="loc" id="loc" title="Click to change pincode">Delivery in <b>60 mins</b><span id="pin">Nagpur · 440001 ▾</span></div>
+ <div class="search"><span>🔍</span><input id="q" placeholder="Search cement, plywood, wires, tiles…" autocomplete="off"></div>
+ <button class="ib" id="theme" aria-label="Toggle theme">🌓</button>
+ <button class="ib cartb" id="cartbtn">🛒 Cart<em id="cc">0</em></button>
+</div></header>
+
+<main class="wrap" id="top">
+ <section class="hero">
+  <div>
+   <span class="chip">⚡ 100% genuine · QR-verified brands</span>
+   <h1>Everything to build,<br>at your site in <u>60 mins.</u></h1>
+   <p>Cement, plywood, wires, tiles and hardware at the lowest prices. No minimum order. Free delivery above ₹500.</p>
+   <a class="cta" href="#shop">Shop materials →</a>
+  </div>
+  <div class="rider"><div class="clock"><div><b id="mins">60</b><small>MINUTES</small></div></div><div class="road"></div><div class="truck">🚚</div></div>
+ </section>
+
+ <div class="trust">
+  <div><span>✅</span><p style="margin:0"><b>Authentic only</b>QR verified</p></div>
+  <div><span>💸</span><p style="margin:0"><b>Lowest prices</b>Bulk discounts</p></div>
+  <div><span>🎁</span><p style="margin:0"><b>1% cashback</b>on every order</p></div>
+  <div><span>🚚</span><p style="margin:0"><b>Free delivery</b>on ₹500+</p></div>
+ </div>
+
+ <h2>Shop by category</h2><p class="sub">Tap a category to filter products instantly.</p>
+ <div class="cats" id="cats"></div>
+
+ <h2 id="shop"><span id="ttl">Deals of the week</span></h2><p class="sub" id="cnt"></p>
+ <div class="grid" id="grid"></div>
+
+ <div class="banners">
+  <div class="bn" style="background:linear-gradient(135deg,#e85d04,#faa307)"><b>Cement at best prices</b><small>Save big on bulk</small><i>🧱</i></div>
+  <div class="bn" style="background:linear-gradient(135deg,#2563eb,#38bdf8)"><b>Original wires &amp; MCBs</b><small>Scan to verify</small><i>⚡</i></div>
+  <div class="bn" style="background:linear-gradient(135deg,#0f766e,#34d399)"><b>Fresh lighting launches</b><small>Up to 40% off</small><i>💡</i></div>
+ </div>
+
+ <h2>Home construction calculator</h2><p class="sub">Estimate how much cement and tiles your build needs.</p>
+ <div class="calc">
+  <div>
+   <label>Built-up area: <b id="av">1200</b> sq ft</label><input type="range" id="area" min="300" max="5000" step="50" value="1200">
+   <label>Floors: <b id="fv">1</b></label><input type="range" id="fl" min="1" max="4" value="1">
+   <label>Quality grade: <b id="gv">Standard</b></label><input type="range" id="gr" min="0" max="2" value="1">
+  </div>
+  <div class="res">
+   <div><b id="r1">0</b><small>Cement bags (50 kg)</small></div>
+   <div><b id="r2">0</b><small>Tile boxes</small></div>
+   <div><b id="r3">0</b><small>Wire coils (90 m)</small></div>
+   <div><b id="r4">₹0</b><small>Est. cement cost</small></div>
+  </div>
+ </div>
+
+ <h2>Customers love BuildRush</h2><p class="sub">Builders and homeowners who made the switch.</p>
+ <div class="rev">
+  <div class="rv">⭐⭐⭐⭐⭐<p>“Cement arrived at my site before the mason finished tea. Absolutely a game changer.”</p><small>— Pavan, contractor</small></div>
+  <div class="rv">⭐⭐⭐⭐⭐<p>“QR scan showed genuine wires. Prices were lower than my local shop too.”</p><small>— Vishal, electrician</small></div>
+  <div class="rv">⭐⭐⭐⭐⭐<p>“No minimum order. I ordered 3 hinges and they came in under an hour.”</p><small>— Gopal, carpenter</small></div>
+ </div>
+</main>
+
+<footer><div class="wrap f">
+ <div><h4>BuildRush</h4>Genuine construction materials delivered in 60 minutes. A demo storefront concept.</div>
+ <div><h4>Company</h4><a href="#top">About us</a><a href="#top">Price lists</a><a href="#top">FAQ</a></div>
+ <div><h4>Policy</h4><a href="#top">Refunds</a><a href="#top">Privacy</a><a href="#top">Shipping</a></div>
+ <div><h4>Contact</h4><a href="#top">hello@buildrush.demo</a><a href="#top">Get the app</a></div>
+</div></footer>
+
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="dr">
+ <div class="dh">Your cart <button class="ib" id="cl">✕</button></div>
+ <div class="db"><div id="fs" style="font-size:13px"></div><div class="bar"><i id="fb"></i></div><div id="items"></div></div>
+ <div class="df"><p><span>Subtotal</span><b id="sub">₹0</b></p><p><span>Bulk savings</span><b id="sv" style="color:var(--ok)">₹0</b></p><p><span>Delivery</span><b id="dl">—</b></p><p><span>Cashback (1%)</span><b id="cb">₹0</b></p><button class="go" id="go">Place order · arrive in 60 mins</button></div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s),inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+const C=[['all','🏗️','All'],['cement','🧱','Cement & Civil'],['tile','🔲','Tiles & Stone'],['paint','🎨','Painting'],['ply','🪵','Plywood'],['elec','⚡','Electrical'],['light','💡','Lighting'],['plumb','🚿','Plumbing'],['hw','🔧','Hardware'],['home','🔥','Appliances']];
+const P=[
+['Ultratech PPC Cement, 50 kg','cement','🧱',450,410,'Fewer cracks · 2L+ sold',[[10,405],[30,395],[50,380]],'#f5e3c8'],
+['Finolex Silver FR Wire, 90 m','elec','🔌',2838,1731,'Extra 2% off on FR',[[5,1690]],'#dbeafe'],
+['MYK Laticrete 303 Tile Adhesive, 20 kg','tile','🔲',300,255,'Interior dry',[[10,245],[25,235]],'#e7e5e4'],
+['Asian Paints Apex Ultima Protek, 10 L','paint','🎨',null,574,'Bridges 2 mm cracks',[],'#fde8e8'],
+['Jaquar Florentine Kitchen Sink Cock','plumb','🚰',2350,1848,'500 hr salt spray',[],'#e0f2fe'],
+['Roff T34 Starlike Epoxy Grout','tile','✨',1375,800,'Italian quartz',[],'#ede9fe'],
+['TP-Link Archer C6 Wi-Fi Router','hw','📡',4999,2899,'MU-MIMO',[],'#dcfce7'],
+['Wipro Alpha COB LED Spotlight','light','💡',950,689,'Inbuilt driver',[[10,640]],'#fef9c3'],
+['Philips Ultra Glow LED Downlight','light','🔆',950,610,'25,000 hr life',[[10,580]],'#fff7ed'],
+['Slotted Angle 5-Shelf Storage Rack','hw','🗄️',6999,3979,'30 kg per shelf',[[2,3879],[4,3759]],'#f1f5f9'],
+['GM Aeris Plus 15 L Water Heater','home','♨️',15750,6449,'BEE 5-star',[[2,6399]],'#fee2e2'],
+['Century 19 mm Marine Plywood, 8×4','ply','🪵',3600,2890,'BWP · 10-yr warranty',[[5,2790]],'#fde7c8'],
+['Hettich Soft-Close Hinge (pair)','hw','🔩',420,260,'Smooth close',[[20,235]],'#e5e7eb'],
+['Dr. Fixit Waterproofing, 20 L','paint','🛢️',3200,2480,'Terrace & bath',[[3,2390]],'#e0e7ff'],
+['Anchor Roma 6A Switch','elec','🎛️',95,62,'Pack of 1',[[20,55]],'#f3f4f6'],
+['Havells Ceiling Fan 1200 mm','home','🌀',3900,2650,'5-star BEE',[[3,2550]],'#cffafe'],
+['Supreme CPVC Pipe 1 in, 3 m','plumb','🧪',690,520,'ISI marked',[[10,490]],'#fef3c7']];
+let cat='all',qs='',cart={};
+const unit=(p,q)=>{let u=p[4];(p[6]||[]).forEach(b=>{if(q>=b[0])u=b[1]});return u};
+function cats(){$('#cats').innerHTML=C.map(c=>`<button class="cat ${cat==c[0]?'on':''}" data-c="${c[0]}"><span class="e">${c[1]}</span><span>${c[2]}</span></button>`).join('')}
+function grid(){
+ const l=P.map((p,i)=>[p,i]).filter(([p])=>(cat=='all'||p[1]==cat)&&p[0].toLowerCase().includes(qs));
+ $('#ttl').textContent=qs?`Results for “${qs}”`:cat=='all'?'Deals of the week':C.find(c=>c[0]==cat)[2];
+ $('#cnt').textContent=l.length+' products · lowest ever prices';
+ $('#grid').innerHTML=l.length?l.map(([p,i],k)=>{const q=cart[i]||0,d=p[3]?Math.round((1-p[4]/p[3])*100):0;
+ return `<div class="card" style="animation-delay:${k*35}ms"><div class="img" style="background:${p[7]}"><span>${p[2]}</span>${d?`<div class="save">Save ${d}%</div>`:''}<div class="min">⏱ 60 min</div></div>
+ <div class="nm">${p[0]}</div><div class="tag">${p[5]}</div>
+ <div class="pr"><b>${inr(p[4])}</b>${p[3]?`<s>${inr(p[3])}</s>`:''}<small style="color:var(--mute);font-size:10px">incl. GST</small></div>
+ ${p[6].length?`<button class="bulk" data-b>📦 Bulk price ${inr(p[6][p[6].length-1][1])} ▾</button><div class="tip">${p[6].map(b=>`Buy <b>${b[0]}+</b> at ${inr(b[1])}/unit`).join('<br>')}</div>`:''}
+ ${q?`<div class="qty"><button data-m="${i}">−</button><b>${q}</b><button data-p="${i}">+</button></div>`:`<button class="add" data-a="${i}">Add</button>`}</div>`}).join(''):'<div class="empty">😕 Nothing found. Try “cement” or “wire”.</div>'}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('o');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('o'),1800)}
+function chg(i,d){cart[i]=(cart[i]||0)+d;if(cart[i]<=0)delete cart[i];render();if(d>0){const c=$('#cc');c.classList.remove('pop');void c.offsetWidth;c.classList.add('pop')}}
+function render(){
+ let n=0,sub=0,mrp=0;const rows=Object.entries(cart).map(([i,q])=>{const p=P[i],u=unit(p,q);n+=q;sub+=u*q;mrp+=p[4]*q;
+ return `<div class="ci"><span class="e">${p[2]}</span><div><b>${p[0]}</b><br><small style="color:var(--mute)">${inr(u)} / unit${u<p[4]?' · bulk applied 🎉':''}</small></div><div class="mini"><button data-m="${i}">−</button><b>${q}</b><button data-p="${i}">+</button></div></div>`}).join('');
+ $('#cc').textContent=n;$('#items').innerHTML=rows||'<p style="text-align:center;color:var(--mute);padding:40px 0">🛒<br>Your cart is empty</p>';
+ const fr=sub>=500;$('#fs').innerHTML=fr?'🎉 <b>Free delivery unlocked!</b>':`Add <b>${inr(500-sub)}</b> more for free delivery`;$('#fb').style.width=Math.min(100,sub/5)+'%';
+ $('#sub').textContent=inr(sub);$('#sv').textContent='−'+inr(mrp-sub);$('#dl').textContent=!n?'—':fr?'FREE':'₹49';$('#cb').textContent=inr(sub*.01);
+ $('#go').textContent=n?`Place order · ${inr(sub+(fr?0:49))}`:'Place order · arrive in 60 mins';
+ grid()}
+document.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;const d=t.dataset;
+ if(d.c){cat=d.c;cats();grid();$('#shop').scrollIntoView()}
+ if(d.a!==undefined){chg(+d.a,1);toast('Added '+P[d.a][0].split(',')[0]+' ✓')}
+ if(d.p!==undefined)chg(+d.p,1);if(d.m!==undefined)chg(+d.m,-1);
+ if(d.b!==undefined)t.classList.toggle('o')});
+$('#q').oninput=e=>{qs=e.target.value.trim().toLowerCase();grid()};
+const dr=v=>{$('#dr').classList.toggle('o',v);$('#ov').classList.toggle('o',v)};
+$('#cartbtn').onclick=()=>dr(true);$('#cl').onclick=$('#ov').onclick=()=>dr(false);
+$('#go').onclick=()=>{if(!Object.keys(cart).length)return toast('Add something first 🙂');cart={};render();dr(false);toast('🎉 Order placed! Rider on the way — 60 mins')};
+$('#loc').onclick=()=>{const p=prompt('Enter delivery pincode','440001');if(p&&/^\d{6}$/.test(p)){$('#pin').textContent='Pincode '+p+' ▾';toast('Delivery available in '+p+' ✓')}};
+$('#theme').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark'};
+// calculator
+const G=['Economy','Standard','Premium'];
+function calc(){const a=+$('#area').value,f=+$('#fl').value,g=+$('#gr').value;
+ $('#av').textContent=a;$('#fv').textContent=f;$('#gv').textContent=G[g];
+ const bags=a*f*0.45*(1+g*.06),tiles=a*f*.55/16,wire=a*f/450*(1+g*.15);
+ $('#r1').textContent=Math.round(bags).toLocaleString('en-IN');$('#r2').textContent=Math.round(tiles).toLocaleString('en-IN');$('#r3').textContent=Math.ceil(wire);$('#r4').textContent=inr(bags*410)}
+['area','fl','gr'].forEach(i=>$('#'+i).oninput=calc);
+// animated minutes
+let m=60;setInterval(()=>{m=m<=42?60:m-1;$('#mins').textContent=m},1500);
+cats();render();calc();
+</script>
+</body>
+</html>
